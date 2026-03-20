@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Shield } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Union Helper | Documentation',
@@ -40,10 +41,14 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="border-t border-slate-800 bg-slate-950 py-12">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-slate-500 text-sm">
+          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <p className="text-slate-500 text-sm order-2 md:order-1">
               &copy; 2026 Union Helper. All rights reserved.
             </p>
+            <div className="flex items-center gap-8 text-sm font-medium text-slate-500 order-1 md:order-2">
+              <Link href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
+              <a href="mailto:admin@unionhelper.co.uk" className="hover:text-blue-400 transition-colors">Support</a>
+            </div>
           </div>
         </footer>
       </body>
