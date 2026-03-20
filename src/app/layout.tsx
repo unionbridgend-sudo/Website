@@ -4,8 +4,8 @@ import { Shield } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Union Helper | Documentation',
-  description: 'Learn how to use Union Helper to manage your union effectively.',
+  title: 'Union Helper | Coming Soon',
+  description: 'The ultimate tool for union management.',
 };
 
 export default function RootLayout({
@@ -16,38 +16,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased selection:bg-blue-500/30">
-        <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-white font-bold text-xl">
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-                <Shield className="w-5 h-5" />
-              </div>
-              Union Helper
-            </div>
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-              <a href="#how-it-works" className="hover:text-blue-400 transition-colors">How it Works</a>
-              <a href="#setup" className="hover:text-blue-400 transition-colors">Setup</a>
-              <a href="#faq" className="hover:text-blue-400 transition-colors">FAQ</a>
-              <a 
-                href="https://api.unionhelper.co.uk/admin" 
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
-              >
-                Go to App
-              </a>
-            </div>
-          </div>
-        </nav>
-        <main className="pt-16">
+        <main>
           {children}
         </main>
-        <footer className="border-t border-slate-800 bg-slate-950 py-12">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-slate-500 text-sm order-2 md:order-1">
+        <footer className="fixed bottom-0 w-full py-8 text-center bg-transparent">
+          <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
+            <p className="text-slate-600 text-sm">
               &copy; 2026 Union Helper. All rights reserved.
             </p>
-            <div className="flex items-center gap-8 text-sm font-medium text-slate-500 order-1 md:order-2">
-              <Link href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
-              <a href="mailto:admin@unionhelper.co.uk" className="hover:text-blue-400 transition-colors">Support</a>
+            <div className="flex items-center gap-6 text-sm font-medium text-slate-500">
+              <Link href="/privacy" className="hover:text-blue-400 transition-colors underline underline-offset-4 decoration-slate-700">Privacy Policy</Link>
+              <a href="mailto:admin@unionhelper.co.uk" className="hover:text-blue-400 transition-colors">Contact</a>
             </div>
           </div>
         </footer>
