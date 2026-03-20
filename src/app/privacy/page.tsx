@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
           className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors mb-12 group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          Back to Documentation
+          Back to Home
         </Link>
 
         <div className="bg-slate-800/50 rounded-3xl p-8 lg:p-12 border border-slate-700/50 shadow-2xl">
