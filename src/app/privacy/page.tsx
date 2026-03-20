@@ -1,4 +1,4 @@
-import { Shield, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export default function PrivacyPolicy() {
@@ -15,8 +15,8 @@ export default function PrivacyPolicy() {
 
         <div className="bg-slate-800/50 rounded-3xl p-8 lg:p-12 border border-slate-700/50 shadow-2xl">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-blue-600/10 rounded-xl flex items-center justify-center text-blue-500">
-              <Shield className="w-6 h-6" />
+            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center overflow-hidden border border-slate-700/50">
+              <img src="/logo.jpg" alt="Union Helper Logo" className="w-full h-full object-cover" />
             </div>
             <h1 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">Privacy Policy</h1>
           </div>
