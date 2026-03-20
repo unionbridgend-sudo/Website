@@ -26,6 +26,7 @@ export default function RootLayout({
             </p>
             <div className="flex items-center gap-6 text-sm font-medium text-slate-500">
               <Link href="/privacy" className="hover:text-blue-400 transition-colors underline underline-offset-4 decoration-slate-700">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-blue-400 transition-colors underline underline-offset-4 decoration-slate-700">Terms of Service</Link>
               <a href="mailto:admin@unionhelper.co.uk" className="hover:text-blue-400 transition-colors">Contact</a>
             </div>
           </div>
