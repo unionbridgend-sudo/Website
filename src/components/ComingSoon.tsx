@@ -84,8 +84,8 @@ const ComingSoon: React.FC = () => {
       <div className="max-w-6xl mx-auto text-center mb-24 relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-500/5 blur-[120px] rounded-full -z-10" />
         
-        <div className="inline-block p-4 mb-10 bg-slate-900 rounded-3xl shadow-2xl border border-slate-800">
-           <img src="/logo.jpg" alt="Union Helper" className="w-24 h-24 object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-500" />
+        <div className="inline-block p-4 mb-10 bg-slate-900 rounded-3xl shadow-2xl border border-slate-800 transition-colors">
+           <img src="/logo.jpg" alt="Union Helper" className="w-24 h-24 object-cover rounded-2xl" />
         </div>
         
         <h2 className="text-blue-500 font-bold tracking-widest uppercase text-xs mb-6">Coming Soon</h2>
