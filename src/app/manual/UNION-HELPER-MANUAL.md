@@ -12,7 +12,27 @@ Union Helper is a subscription-based AI productivity tool with token-based add-o
 
 ## Getting Started
 
-### 1. Create an Account
+### 1. Download & Install the App
+
+Union Helper is a **downloadable desktop application** that runs locally on your computer.
+
+**System Requirements:**
+- Windows 10+, macOS 11+, or Ubuntu 20.04+
+- 4GB RAM minimum (8GB recommended)
+- 500MB free disk space
+- Internet connection for authentication and AI features
+
+**Installation Steps:**
+
+1. Go to [unionhelper.co.uk/downloads](/downloads)
+2. Download the version for your operating system:
+   - **Windows:** `UnionHelper-Setup.exe` or `.msi`
+   - **macOS:** `UnionHelper.dmg`
+   - **Linux:** `UnionHelper.AppImage` or `.deb`
+3. Run the installer and follow the on-screen instructions
+4. Launch **Union Helper** from your Start Menu / Applications folder
+
+### 2. Create an Account
 
 1. Go to [unionhelper.co.uk](https://unionhelper.co.uk)
 2. Click **Sign Up**
@@ -44,20 +64,31 @@ Access at [http://localhost:3000](http://localhost:3000)
 
 ## Application Screenshots
 
-### Homepage
-![Homepage — unionhelper.co.uk](screenshots/01-homepage.png)
+The Union Helper desktop app running on your local computer:
 
-### Login
-![Login Page](screenshots/02-login.png)
+### App - Homepage
+![Homepage — Union Helper App](app-01-home.png)
 
-### Register
-![Registration](screenshots/03-register.png)
+### App - Registration
+![Registration](app-02-register.png)
 
-### Pricing
-![Pricing Plans](screenshots/04-pricing.png)
+### App - Login
+![Login Page](app-04-login.png)
 
-### About
-![About Union Helper](screenshots/05-about.png)
+### App - Dashboard
+![Dashboard](app-09-dashboard.png)
+
+### App - RAG / Embeddings
+![RAG Embeddings](app-06-rag.png)
+
+### App - AI Chat
+![AI Chat](app-07-ai-chat.png)
+
+### App - Settings
+![Settings](app-10-settings.png)
+
+### App - Token Balance
+![Token Balance](app-11-tokens.png)
 
 ---
 
@@ -188,18 +219,30 @@ npm run dev:no-browser
 ## Architecture
 
 ```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│  UnionHelper    │     │   Server API    │     │   Stripe        │
-│  Web App        │────▶│  (Node.js)      │────▶│   (Billing)     │
-│  localhost:3000 │     │  api.unionhelper│     │                 │
-└─────────────────┘     └────────┬────────┘     └─────────────────┘
-                                 │
-                                 ▼
-                        ┌─────────────────┐
-                        │   PostgreSQL    │
-                        │   (Neon DB)     │
-                        └─────────────────┘
+┌─────────────────────────────────────────┐
+│     Customer's PC (Union Helper App)    │
+│   ┌─────────────────────────────────┐   │
+│   │  UnionHelper-App (Next.js)      │   │
+│   │  Runs locally: localhost:3000   │   │
+│   │  Stores data locally (SQLite)   │   │
+│   │  Authenticates via api.unionhelper.co.uk │
+│   └──────────────┬──────────────────┘   │
+│                  │ HTTPS               │
+└──────────────────│──────────────────────┘
+                   │
+         ┌─────────▼─────────┐
+         │  api.unionhelper.co.uk  │
+         │     (Node.js API)       │
+         │  Billing + Auth         │
+         └─────────┬─────────────┘
+                   │
+         ┌─────────▼─────────┐
+         │   Stripe          │
+         │   (Billing)       │
+         └───────────────────┘
 ```
+
+**Note:** The app runs entirely on the customer's PC. All data (cases, documents, embeddings) is stored locally in SQLite. The app only connects to the internet for authentication, billing, and AI services.
 
 ---
 
